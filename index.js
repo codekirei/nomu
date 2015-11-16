@@ -25,7 +25,7 @@ function readFiles(files) {
   const proms = files.map(file => fs.readFileAsync(file))
   return P.all(proms)
     .then(buffers => buffers.reduce((prev, cur, i) => {
-      prev.set(files[i], cur.toString())
+      prev.set(files[i], cur)
       return prev
     }, new Map()))
 }

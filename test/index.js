@@ -12,4 +12,5 @@ const nomu = require('../')
 //----------------------------------------------------------
 // tests
 //----------------------------------------------------------
-console.log(nomu.src('node_modules/*.js'))
+nomu.src('../node_modules/*/*.js')
+  .then(map => map.forEach((_, key) => console.log(key)))
